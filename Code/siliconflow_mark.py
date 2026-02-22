@@ -90,7 +90,7 @@ class ModelChat(LLM):
 
     # NOTE: Do NOT hardcode secrets in code. Read from environment variables.
     api_secret: str = ""
-    model_name: str = "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+    model_name: str = "deepseek-ai/DeepSeek-V3.2"
 
     def __init__(self, api_secret: Optional[str] = None, model_name: Optional[str] = None):
         super().__init__()
@@ -115,7 +115,7 @@ class ModelChat(LLM):
             "messages": [{"role": "user", "content": prompt}],
             "stream": False,
             "max_tokens": 4060,
-            "enable_thinking": False,  # <--- change to True/False as needed
+            "enable_thinking": True,  # <--- change to True/False as needed
             "min_p": 0.05,
             "stop": None,
             "temperature": 0.1,
@@ -425,5 +425,6 @@ if __name__ == "__main__":
     print(f"Total rows: {len(df_target)}")
     print(f"Labeled rows: {df_target['primary_topic'].notna().sum()}")
     print(f"Unlabeled rows: {df_target['primary_topic'].isna().sum()}")
+
 
     print("Primary-topic classification finished.")
