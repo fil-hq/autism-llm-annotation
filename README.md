@@ -6,8 +6,9 @@
 ## 目录结构
 
 - `Code/`：用于存放标注代码  
-  - `siliconflow_mark.py`：使用**硅基智能（SiliconFlow）API** 进行标注
-  - `vllm_mark.py`：使用**本地模型启动vLLM 服务**进行标注
+  - `siliconflow_mark_1.py`、`vllm_mark_1.py`：用于 **百度贴吧（Tieba）一级主题** 标注  
+  - `siliconflow_mark_2.py`、`vllm_mark_2.py`：用于 **百度贴吧（Tieba）二级主题** 标注
+  - `siliconflow_mark_consultation.py`、`vllm_mark_consultation.py`：用于 **在线医疗问诊平台（春雨医生、好大夫）** 语料标注  
 - `Codebook/`：分类手册（Codebook）  
   - `Codebook_en/`：英文版分类手册  
   - `Codebook_ch/`：中文版分类手册  
@@ -30,13 +31,15 @@
 
 # Annotation Code & Codebook Repository (README)
 
-This repository stores code and documentation for annotating **topics** and **poster identities** in autism-related online community and online medical consultation corpora.
+This repository stores code and documentation for annotating **topics** and **identities** in autism online community and online medical consultation corpora.
 
 ## Repository Structure
 
 - `Code/`: Annotation scripts  
-  - `siliconflow_mark.py`: Annotation via **SiliconFlow (硅基智能) API**  
-  - `vllm_mark.py`: Annotation via **local models served with vLLM**  
+  - `siliconflow_mark_1.py`, `vllm_mark_1.py`: **Primary topic annotation** for **Baidu Tieba**  
+  - `siliconflow_mark_2.py`, `vllm_mark_2.py`: **Scondary topic annotation** for **Baidu Tieba**
+  - `siliconflow_mark_consultation.py`, `vllm_mark_consultation.py`: Annotation for **physician–patient
+consultation platforms** (**Chunyu Doctor** and **Haodf**)  
 - `Codebook/`: Classification codebook  
   - `Codebook_en/`: English codebook  
   - `Codebook_ch/`: Chinese codebook  
@@ -51,8 +54,7 @@ This repository stores code and documentation for annotating **topics** and **po
 
 ## Codebook Description
 
-The `Codebook/` folder provides detailed specifications for classifying **poster identities** (`poster_role`) and **topics** (`topic / primary_topic / secondary_topic`), including:
+The `Codebook/` folder provides detailed specifications for classifying **identities**  and **topics** , including:
 - Definition
 - KeywordS
 - Example records
-
